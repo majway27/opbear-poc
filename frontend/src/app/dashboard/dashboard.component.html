@@ -1,0 +1,8 @@
+<h3>Top Vehicles</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let vehicle of vehicles" [routerLink]="['/detail', vehicle.id]" class="col-1-4">
+    <div class="module vehicle">
+      <h4>{{vehicle.name}}</h4>
+    </div>
+  </a>
+</div>

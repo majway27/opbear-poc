@@ -1,0 +1,13 @@
+<div *ngIf="book">
+  <h2>Book: {{book.name}}</h2>
+  <div class = "well">
+    <div><label>id: </label>{{book.id}}</div>
+    <label>name: </label>
+    <input [(ngModel)]="book.name" placeholder="name"/>
+  </div>
+  <div class="btn-group">
+    <button (click)="goBack()" type="button" class="btn btn-primary">Back</button>
+    <button (click)="updateBook(this.book)" type="button" class="btn btn-primary">Update</button>
+    <button (click)="deleteBook(book.id)" type="button" class="btn btn-primary">Delete</button>
+  </div>
+</div>

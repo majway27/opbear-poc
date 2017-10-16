@@ -1,0 +1,12 @@
+<h3>Name Service</h3>
+<div>
+  <div>
+     <label>Name: </label>
+     <input [(ngModel)]="name.fname" />
+  </div>
+  <div>
+     <button (click)="addName()">Add</button>
+  </div>
+</div> 
+<div *ngIf="fName" [ngClass] = "'success'"> {{fName}} Added. </div>
+<div *ngIf="errorMessage" [ngClass] = "'error'"> {{errorMessage}} </div> 
