@@ -1,0 +1,22 @@
+source ~/workspace/chalice-demo/.env/bin/activate
+chalice local --port 8080
+
+# Get to index
+curl localhost:8080/books
+
+# Get {id}
+curl localhost:8080/books/1
+
+# Post
+curl -H "Content-Type: application/json" -X POST -d '{"foo","bar"}' localhost:8080
+
+# Delete
+curl -H "Content-Type: application/json" -X DELETE -d '{"x-api-key","bar"}' localhost:8080/books/delete/11
+
+# Post - Update by ID
+curl -H "Content-Type: application/json" -X POST -d '{"x-api-key","bar"}' localhost:8080/books/update/1
+
+# Put
+curl -H "Content-Type: application/json" -X PUT -d '{"foo","bar"}' localhost:8080/books/create/1/Java
+curl -H "Content-Type: application/json" -X PUT -d '{"foo","bar"}' localhost:8080/books/create/3/Python
+curl -H "Content-Type: application/json" -X PUT -d '{"foo","bar"}' localhost:8080/books/create/3/Haskell
